@@ -1,0 +1,45 @@
+<head>
+    <title>First Page</title>
+      
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward(); 
+        }
+          
+        setTimeout("preventBack()", 0);
+          
+        window.onunload = function () { null };
+    </script>
+</head>   
+<form action="login1.php" method="post">
+
+    <center><h2>LOGIN</h2></center>
+
+    <?php if (isset($_GET['error'])) { ?>
+
+        <p class="error"><?php echo $_GET['error']; ?></p>
+
+    <?php } ?>
+    <style>
+        body {
+          background-image: url('family-covid3.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+        }
+        </style>
+ <div class="container" style="background-color:#f1f1f1 ;padding: 10px ; width: 300px;";>
+<h1><label>User Name</label></h1>
+
+<h1><input type="text" name="uname" placeholder="User Name"><br></h1>
+
+<h1><label>Password</label></h1>
+
+<h1>  <input type="password" name="password" placeholder="Password"><br> </h1>
+
+<h1> <button type="submit">Login</button></h1>
+</div>
+ 
+ </form>
+
+</body>

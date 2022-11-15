@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>First Page</title>
+          
+        <script type="text/javascript">
+            function preventBack() {
+                window.history.forward(); 
+            }
+              
+            setTimeout("preventBack()", 0);
+              
+            window.onunload = function () { null };
+            
+      function validate()
+      {
+          var hospital=document.getElementById("hospital").value;
+          var regx=/[a-z]/;
+         
+          if(regx.test(hospital))
+          {
+              alert("valid hospital");
+              var type=document.getElementById("type").value;
+          if(regx.test(type))
+          {
+              alert("valid type");
+              var district=document.getElementById("district").value;
+          if(regx.test(district))
+          {
+              alert("valid district");
+             return true;
+          }
+          else
+          {
+              alert("invalid district");
+              document.getElementById("lbluster2").style.visibility="visible";
+              return false;
+          }
+          }
+          else
+          {
+              alert("invalid type");
+              document.getElementById("lbluster1").style.visibility="visible";
+              return false;
+          }
+              
+          }
+          else
+          {
+              alert("invalid hospital");
+              document.getElementById("lbluster").style.visibility="visible";
+              return false;
+          }
+         
+         
+         
+      }
+        </script>
+        <style>
+            body {
+              background-image: url('family-covid1.jpg');
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-size: 100% 100%;
+            }
+           
+            </style> 
+    </head> 
+    <body>
+<form action="databasevaccination.php" onsubmit="return validate()" method="post"  >
+    <div class="container" style="background-color:#f1f1f1 ;padding: 10px ; width: 300px;";>
+    <center><bold>VACCINATION REGISTRATION</bold></center>
+    <h1><input id="hospital" type="text"placeholder="hospital"name="hospital"></input><br>
+    
+    <input id="type" type="text"placeholder="type"name="type"></input><br>
+   
+    <input id="district" type="text"placeholder="district"name="district"></input><br></h1>
+   
+<h1><label id="lbluster" style="color:red; visibility:hidden">invalid hospital</label></h1>
+<h1><label id="lbluster1" style="color:red;visibility:hidden">invalid type</label></h1>
+<h1><label id="lbluster2" style="color:red ;visibility:hidden">invalid district</label></h1>
+   
+    
+    <button id="btn"> add vaccination center</button>
+</div> 
+    </form>
+    </body>
+    </html>

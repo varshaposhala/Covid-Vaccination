@@ -1,0 +1,33 @@
+<head>
+    <title>First Page</title>
+      
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward(); 
+        }
+          
+        setTimeout("preventBack()", 0);
+          
+        window.onunload = function () { null };
+    </script>
+</head> 
+<style>
+    body {
+      background-image: url('family-covid3.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+    </style>  
+<form action="search1.php" method="post" > 
+    <div class="container" style="background-color:#f1f1f1 ;padding: 100px ; width: 300px;";>
+    <center><bold>DOSAGE DETAILS</bold></center>
+<h1><input id="hospital" type="text"placeholder="hospital"name="hospital"></input><br></h1>
+<h1><button id="btn"> search</button></h1>
+</div> 
+    
+    
+   
+    
+
+    </form>

@@ -1,0 +1,37 @@
+<head>
+    <title>First Page</title>
+      
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward(); 
+        }
+          
+        setTimeout("preventBack()", 0);
+          
+        window.onunload = function () { null };
+    </script>
+    <style>
+        body {
+          background-image: url('family-covid1.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+        }
+        </style> 
+</head>   
+<form action="apply1.php" method="post" > 
+    <div class="container" style="background-color:#f1f1f1 ;padding: 10px ; width: 300px;";>
+    <center><bold>VACCINATION APPLYING</bold></center>
+<h1><input id="user" type="text"placeholder="user"name="user"></input><br></h1>
+<h1><input id="hospital" type="text"placeholder="hospital"name="hospital"></input><br></h1>
+    
+<h1><input id="dose" type="text"placeholder="dose"name="dose"></input><br></h1>
+   
+
+    
+    
+    
+    
+    <button id="btn">Apply</button>
+</div>
+    </form>

@@ -1,0 +1,108 @@
+
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+    
+          
+        <script type="text/javascript">
+            function preventBack() {
+                window.history.forward(); 
+            }
+              
+            setTimeout("preventBack()", 0);
+              
+            window.onunload = function () { null };
+        </script>
+    </head>     
+    <script type="text/javascript">
+      function validate()
+      {
+          var username=document.getElementById("user").value;
+          var regx=/[a-z]/;
+          var regx1=/\w/;
+          var regx2=/^[7-9]\d{9}$/;
+          var regx3=/^([a-z 0-9\.-]+)@([a-z 0-9 -]+).([a-z]{2,8})(.[a-z]{2,8})$/;
+          if(regx.test(username))
+          {
+              alert("valid username");
+              var password=document.getElementById("pass").value;
+          if(regx1.test(password))
+          {
+              alert("valid password");
+              var phone=document.getElementById("phone").value;
+          if(regx2.test(phone))
+          {
+              alert("valid phone");
+              var email=document.getElementById("gmail").value;
+          if(regx3.test(email))
+          {
+              alert("valid gmail");
+              return true;
+          }
+          else
+          {
+              alert("invalid gmail");
+              document.getElementById("lbluster3").style.visibility="visible";
+              return false;
+          }
+          }
+          else
+          {
+              alert("invalid phone");
+              document.getElementById("lbluster2").style.visibility="visible";
+              return false;
+          }
+          }
+          else
+          {
+              alert("invalid password");
+              document.getElementById("lbluster1").style.visibility="visible";
+              return false;
+          }
+              
+          }
+          else
+          {
+              alert("invalid username");
+              document.getElementById("lbluster").style.visibility="visible";
+              return false;
+          }
+         
+         
+         
+      }
+    </script>
+     <style>
+        body {
+          background-image: url('family-covid3.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+        }
+        </style> 
+</head>
+<body>
+    
+    <form action="database.php"  onsubmit="return validate()" method="post" >
+        <div class="container" style="background-color:#f1f1f1 ;padding: 10px ; width: 300px;";>
+<center><bold>REGISTRATION</bold></center>
+<h1><input id="aadhar" type="text"placeholder="aadhar"name="aadhar"></input><br></h1>
+<h1><input id="user" type="text"placeholder="username"name="username"></input><br></h1>
+
+<h1><input  id="pass"type="password"placeholder="password"name="password"></input><br></h1>
+
+<h1><input id="phone"type="text"placeholder="phone"name="phone"></input><br></h1>
+
+<h1><input id="gmail"type="gmail"placeholder="gmail"name="gmail"></input><br></h1>
+<h1><label id="lbluster3" style="color:red ;visibility:hidden">invalid gmail</label></h1>
+<h1><label id="lbluster" style="color:red; visibility:hidden">invalid username</label></h1>
+<h1><label id="lbluster1" style="color:red;visibility:hidden">invalid password</label></h1>
+<h1><label id="lbluster2" style="color:red ;visibility:hidden">invalid phone</label></h1>
+
+<button id="btn"> sign up</button>
+</div> 
+</form>
+    
+</body>
+</html>
